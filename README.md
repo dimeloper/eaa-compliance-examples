@@ -2,7 +2,7 @@
 
 This repository contains examples of accessible web development practices to help developers comply with the **European
 Accessibility Act (EAA)**. The examples demonstrate techniques for creating inclusive, user-friendly webpages for all
-users, including those with disabilities.
+users.
 
 ## Features
 
