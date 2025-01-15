@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description"
+          content="An example of an accessible webpage compliant with the European Accessibility Act."/>
+    <title>Accessible Webpage Example</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- Header with semantic structure -->
+<header>
+    <h1>This is an Accessible Webpage</h1>
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main content -->
+<main id="main-content">
+    <!-- Accessible multimedia -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Our mission is to create inclusive, accessible digital experiences for everyone.</p>
+        <img src="team.webp" alt="Team photo of eight smiling people at the office"/>
+        <video controls autoplay muted loop>
+            <source src="intro.mp4" type="video/mp4"/>
+            <track src="captions/captions.vtt" kind="subtitles" srclang="en" label="English"/>
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Accessible forms -->
+    <section id="services">
+        <h2>Stay Up To Date</h2>
+        <form id="signup-form" novalidate>
+            <fieldset>
+                <legend>Sign Up for Updates</legend>
+
+                <!-- Name Field -->
+                <label for="name">Name:</label>
+                <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                        aria-invalid="false"
+                        aria-describedby="name-error"/>
+                <span id="name-error" class="error-message" aria-live="polite"></span>
+
+                <!-- Email Field -->
+                <label for="email">Email:</label>
+                <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                        aria-invalid="false"
+                        aria-describedby="email-error"/>
+                <span id="email-error" class="error-message" aria-live="polite"></span>
+
+                <!-- Password Field -->
+                <label for="password">Password:</label>
+                <div style="position: relative;">
+                    <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                            aria-invalid="false"
+                            aria-describedby="password-error password-visibility"/>
+                    <button
+                            type="button"
+                            id="toggle-password-visibility"
+                            aria-label="Show password"
+                            style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
+                        Show
+                    </button>
+                </div>
+                <span id="password-error" class="error-message" aria-live="assertive"></span>
+                <span id="password-visibility" class="visually-hidden"
+                      aria-live="polite">Password is currently hidden.</span>
+
+                <button type="submit">Subscribe</button>
+            </fieldset>
+        </form>
+
+        <!-- Live region for form status updates -->
+        <div id="form-status" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Accessible tables -->
+    <section>
+        <h2>Service Plans</h2>
+        <table>
+            <caption>Comparison of service plans</caption>
+            <thead>
+            <tr>
+                <th>Plan</th>
+                <th>Price</th>
+                <th>Features</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Basic</td>
+                <td>$10/month</td>
+                <td>Basic support</td>
+            </tr>
+            <tr>
+                <td>Pro</td>
+                <td>$20/month</td>
+                <td>Priority support</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" role="region" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact Us</h2>
+        <p>We’d love to hear from you! Reach out via the form below:</p>
+        <form>
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" cols="30" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Developed by Dimeloper | <a href="#main-content">Back to top</a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
